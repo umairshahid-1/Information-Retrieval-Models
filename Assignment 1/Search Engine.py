@@ -1,5 +1,4 @@
 import os
-import re
 from collections import defaultdict
 from colorama import Fore, Style, init
 
@@ -22,6 +21,10 @@ def clean_and_tokenize(text):
 
 
 def build_index(folder_path):
+    # Clear the existing index and doc_names for re-indexing
+    index.clear()
+    doc_names.clear()
+
     doc_id = 1  # Document ID starts from 1
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
@@ -50,7 +53,7 @@ def search_word(query):
 
         # Count occurrences in each document
         doc_count = defaultdict(int)
-        for doc_id, position in results:
+        for doc_id, positions in results:
             doc_count[doc_id] += 1
 
         # Sort documents by frequency in descending order
@@ -103,9 +106,10 @@ def main():
         print(f"{Fore.MAGENTA}\nSelect an option:{Style.RESET_ALL}")
         print("1. Search by word")
         print("2. Search by document title")
-        print("3. Exit")
+        print("3. Re-index documents")
+        print("4. Exit")
 
-        choice = input("\nEnter your choice (1/2/3): ")
+        choice = input("\nEnter your choice (1/2/3/4): ")
 
         if choice == '1':
             query = input("\n Enter the word to search: ")
@@ -115,7 +119,10 @@ def main():
                 "\n Enter the document title (without extension) to search: ")
             search_title(folder_path, title)
         elif choice == '3':
-            print(f"{Fore.GREEN} \n Exiting the search engine. Goodbye!{
+            print(f"{Fore.GREEN}\n Indexer Refreshed!{Style.RESET_ALL}")
+            build_index(folder_path)  # Rebuild the index
+        elif choice == '4':
+            print(f"{Fore.GREEN}\nExiting the search engine. Goodbye!{
                   Style.RESET_ALL}")
             break
         else:
