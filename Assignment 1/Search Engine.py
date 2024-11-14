@@ -1,49 +1,69 @@
 import os
+import re
 from collections import defaultdict
 from colorama import Fore, Style, init
 
 # Initialize colorama
 init(autoreset=True)
 
-# Step 1: Define the index data structure
-index = defaultdict(list)  # Dictionary to hold the index
-doc_names = {}  # Dictionary to map doc_id to document names
+# Define the index data structure
+index = defaultdict(list)
+doc_names = {}
+nouns_in_docs = defaultdict(list)  # Store nouns for each document
 
-# Step 2: Function to clean and tokenize text by comma separation
+# Function to clean, tokenize, and extract nouns
 
 
 def clean_and_tokenize(text):
-    # Split by comma and strip whitespace
-    words = [word.strip().lower() for word in text.split(',') if word.strip()]
-    return words
+    # Remove punctuation using regex and split by spaces
+    # Extract words ignoring punctuation
+    words = re.findall(r'\b\w+\b', text.lower())
 
-# Step 3: Function to read and index documents
+    # Heuristic for nouns: Collect capitalized words as nouns (simple assumption)
+    nouns = [word for word in re.findall(r'\b[A-Z][a-z]*\b', text)]
+
+    return words, nouns
+
+# Function to read and index documents
 
 
 def build_index(folder_path):
     # Clear the existing index and doc_names for re-indexing
     index.clear()
     doc_names.clear()
+    nouns_in_docs.clear()
 
-    doc_id = 1  # Document ID starts from 1
+    doc_id = 1
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         if os.path.isfile(file_path):
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
-                # Tokenize based on comma separation
-                words = clean_and_tokenize(content)
+                words, nouns = clean_and_tokenize(content)
 
-                # Store the document name in doc_names dictionary
+                # Store document name
                 doc_names[doc_id] = filename
+
+                # Store nouns for this document
+                nouns_in_docs[doc_id] = nouns
 
                 # Add each word to the index
                 for position, word in enumerate(words):
                     index[word].append((doc_id, position))
 
-            doc_id += 1  # Increment document ID after processing each document
+            doc_id += 1
+    print(f"{Fore.GREEN}Index built successfully!{Style.RESET_ALL}")
 
-# Step 4: Search function to search by word, sorted by frequency and displayed in a more readable format
+# Function to display nouns in a document
+
+
+def display_nouns(doc_id):
+    doc_name = doc_names.get(doc_id, f"Document {doc_id}")
+    nouns = nouns_in_docs.get(doc_id, [])
+    print(f"\n{Fore.BLUE}Nouns in {doc_name}:{Style.RESET_ALL}")
+    print(", ".join(nouns) if nouns else "No nouns found.")
+
+# Function to search by word
 
 
 def search_word(query):
@@ -53,53 +73,48 @@ def search_word(query):
 
         # Count occurrences in each document
         doc_count = defaultdict(int)
-        for doc_id, positions in results:
+        for doc_id, position in results:
             doc_count[doc_id] += 1
 
-        # Sort documents by frequency in descending order
+        # Sort by frequency
         sorted_results = sorted(
             doc_count.items(), key=lambda x: x[1], reverse=True)
 
-        # Display results in a more readable, colored, table-like format
         print(f"\n{Fore.GREEN}Word '{
               query}' found in the following documents:{Style.RESET_ALL}")
         print(f"{Fore.YELLOW}{'Document Name':<30}{
-              'Frequency':<21}{'Positions'}{Style.RESET_ALL}")
+              'Frequency':<20}{'Positions'}{Style.RESET_ALL}")
         print("-" * 60)
         for doc_id, frequency in sorted_results:
             positions = [pos for d_id, pos in results if d_id == doc_id]
             doc_name = doc_names.get(doc_id, f"Document {doc_id}")
             print(f"{Fore.GREEN}{doc_name:<30}{
-                  frequency:<21}{positions}{Style.RESET_ALL}")
-    else:
-        print(f"{Fore.RED}Word '{
-            query}' not found in any document.{Style.RESET_ALL}")
+                  frequency:<20}{positions}{Style.RESET_ALL}")
+            display_nouns(doc_id)  # Show nouns in this document
 
-# Step 5: Search function to search by title (filename without extension)
+# Function to search by title
 
 
 def search_title(folder_path, title):
     title = title.lower()
     for filename in os.listdir(folder_path):
-        file_name_only, _ = os.path.splitext(filename)  # Remove file extension
+        file_name_only, _ = os.path.splitext(filename)
         if file_name_only.lower() == title:
             print(f"{Fore.GREEN}Document '{title}' found as '{
                   filename}'.{Style.RESET_ALL}")
             return
     print(f"{Fore.RED}Document '{title}' not found.{Style.RESET_ALL}")
 
-# Step 6: Main function to tie everything together
+# Main function
 
 
 def main():
-    # Prompt the user to input the directory path
     folder_path = input(
-        f"\n {Fore.MAGENTA} Enter the folder path containing documents: {Style.RESET_ALL}")
+        f"\n {Fore.MAGENTA}Enter the folder path containing documents: {Style.RESET_ALL}")
 
-    # Build the index from the documents
+    # Initial index build
     print("Building the index from documents...")
     build_index(folder_path)
-    print(f"{Fore.GREEN}Index built successfully!{Style.RESET_ALL}")
 
     # Interactive menu
     while True:
@@ -112,24 +127,23 @@ def main():
         choice = input("\nEnter your choice (1/2/3/4): ")
 
         if choice == '1':
-            query = input("\n Enter the word to search: ")
+            query = input("\nEnter the word to search: ")
             search_word(query)
         elif choice == '2':
             title = input(
-                "\n Enter the document title (without extension) to search: ")
+                "\nEnter the document title (without extension) to search: ")
             search_title(folder_path, title)
         elif choice == '3':
-            print(f"{Fore.GREEN}\n Indexer Refreshed!{Style.RESET_ALL}")
+            print("\nRe-indexing documents...")
             build_index(folder_path)  # Rebuild the index
         elif choice == '4':
             print(f"{Fore.GREEN}\nExiting the search engine. Goodbye!{
                   Style.RESET_ALL}")
             break
         else:
-            print(f"{Fore.RED}\n Invalid choice. Please try again.{
+            print(f"{Fore.RED}\nInvalid choice. Please try again.{
                   Style.RESET_ALL}")
 
 
-# This will ensure the script is run directly and not imported
 if __name__ == "__main__":
     main()
