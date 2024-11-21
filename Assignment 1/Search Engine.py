@@ -6,25 +6,29 @@ from colorama import Fore, Style, init
 # Initialize colorama
 init(autoreset=True)
 
-# Define the index data structure
+# 1. Define the index data structure
 index = defaultdict(list)
 doc_names = {}
 nouns_in_docs = defaultdict(list)  # Store nouns for each document
+stopwords = {"is", "am", "are", "this", "there",
+             "the", "a", "an", "in", "on", "and", "or", "of"}
 
-# Function to clean, tokenize, and extract nouns
+# 2. Function to clean, tokenize, and extract nouns
 
 
 def clean_and_tokenize(text):
-    # Remove punctuation using regex and split by spaces
-    # Extract words ignoring punctuation
+    # Extract words ignoring punctuation and convert to lowercase
     words = re.findall(r'\b\w+\b', text.lower())
 
-    # Heuristic for nouns: Collect capitalized words as nouns (simple assumption)
+    # Filter out stopwords
+    meaningful_words = [word for word in words if word not in stopwords]
+
+    # Heuristic for nouns: Collect capitalized words as nouns
     nouns = [word for word in re.findall(r'\b[A-Z][a-z]*\b', text)]
 
-    return words, nouns
+    return meaningful_words, nouns
 
-# Function to read and index documents
+# 3. Function to read and index documents
 
 
 def build_index(folder_path):
@@ -63,7 +67,7 @@ def display_nouns(doc_id):
     print(f"\n{Fore.BLUE}Nouns in {doc_name}:{Style.RESET_ALL}")
     print(", ".join(nouns) if nouns else "No nouns found.")
 
-# Function to search by word
+# 4. Function to search by word
 
 
 def search_word(query):
@@ -90,9 +94,13 @@ def search_word(query):
             doc_name = doc_names.get(doc_id, f"Document {doc_id}")
             print(f"{Fore.GREEN}{doc_name:<30}{
                   frequency:<20}{positions}{Style.RESET_ALL}")
-            display_nouns(doc_id)  # Show nouns in this document
+        display_nouns(doc_id)  # Show nouns in this document
 
-# Function to search by title
+    else:
+        print(f"{Fore.RED}Word '{
+              query}' not found in the index.{Style.RESET_ALL}")
+
+# 5. Function to search by title
 
 
 def search_title(folder_path, title):
