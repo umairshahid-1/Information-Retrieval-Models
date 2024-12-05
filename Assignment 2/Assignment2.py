@@ -1,5 +1,5 @@
-import os  # For reading from the system
-import math  # For log
+import os  # For reading files from the system
+import math  # For log10
 from colorama import init, Fore, Style  # For coloring
 from tabulate import tabulate  # For better table formatting
 
@@ -202,7 +202,7 @@ def search_and_display_with_similarity(noun_store, search_query):
 
     # Query vector (since it's only one term, just TF-IDF of the query itself)
     query_vector = [vectors.get(doc, 0) for doc in vectors]
-    # print(f"Query Vector: {query_vector}")
+    #print(f"Query Vector: {query_vector}")
 
     # Cosine Similarity Calculation
     cosine_scores = [
