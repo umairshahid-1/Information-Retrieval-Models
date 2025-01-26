@@ -1,0 +1,101 @@
+id,name,category,brand,price,color,material,weight,rating,in_stock
+1,Premium Wireless Headphones,Electronics,SoundWave,199.99,Black,Aluminum,0.5,4.5,Yes
+2,Ergonomic Office Chair,Furniture,ComfortPro,349.99,Gray,Mesh,15.5,4.7,Yes
+3,Smart 4K Ultra HD TV,Electronics,VisionTech,799.99,Silver,Plastic,25.3,4.6,Yes
+4,Stainless Steel Kitchen Knife Set,Kitchen,CulinaryCraft,129.99,Silver,Stainless Steel,2.2,4.8,Yes
+5,Leather Messenger Bag,Accessories,UrbanTrend,89.99,Brown,Genuine Leather,1.5,4.4,Yes
+6,Programmable Coffee Maker,Kitchen,BrewMaster,129.99,Black,Stainless Steel,5.5,4.6,Yes
+7,Running Athletic Shoes,Sports,SpeedStep,89.99,Blue,Synthetic,0.8,4.5,Yes
+8,Memory Foam Mattress,Bedroom,DreamCloud,599.99,White,Memory Foam,45.0,4.7,Yes
+9,Portable Bluetooth Speaker,Electronics,SoundPulse,79.99,Red,Aluminum,0.6,4.3,Yes
+10,Non-Stick Cookware Set,Kitchen,CookEase,199.99,Black,Aluminum,12.5,4.6,Yes
+11,Fitness Tracking Smartwatch,Electronics,FitTech,149.99,Green,Silicone,0.3,4.4,Yes
+12,Modern Dining Table,Furniture,StyleHome,499.99,Brown,Wood,65.0,4.5,Yes
+13,Wireless Gaming Mouse,Electronics,GamePro,59.99,Black,Plastic,0.2,4.6,Yes
+14,Premium Yoga Mat,Sports,ZenFitness,49.99,Purple,Rubber,1.5,4.7,Yes
+15,Robot Vacuum Cleaner,Home Appliances,CleanTech,299.99,Silver,Plastic,5.5,4.5,Yes
+16,Men's Leather Wallet,Accessories,ClassicStyle,49.99,Brown,Genuine Leather,0.2,4.3,Yes
+17,Electric Kettle,Kitchen,BoilMaster,59.99,White,Stainless Steel,2.5,4.4,Yes
+18,Noise Cancelling Earbuds,Electronics,SoundShield,129.99,Black,Aluminum,0.1,4.6,Yes
+19,Designer Throw Pillows Set,Home Decor,CozyLiving,79.99,Blue,Cotton,2.0,4.5,Yes
+20,Professional Hair Dryer,Personal Care,SalonPro,89.99,Red,Plastic,0.7,4.4,Yes
+21,Compact Espresso Machine,Kitchen,CoffeeCraft,249.99,Silver,Stainless Steel,8.5,4.7,Yes
+22,Waterproof Hiking Backpack,Sports,TrailMaster,129.99,Green,Nylon,1.8,4.6,Yes
+23,Smart Home Security Camera,Electronics,SafeGuard,199.99,Black,Plastic,0.4,4.5,Yes
+24,Leather Office Desk Chair,Furniture,WorkComfort,279.99,Black,Leather,18.0,4.6,Yes
+25,Wireless Charging Pad,Electronics,ChargePro,39.99,White,Aluminum,0.2,4.3,Yes
+26,Air Purifier,Home Appliances,CleanAir,199.99,White,Plastic,10.5,4.7,Yes
+27,Professional Chef's Knife,Kitchen,CulinaryCraft,89.99,Silver,Stainless Steel,0.5,4.8,Yes
+28,Smart Thermostat,Home Appliances,ClimateControl,249.99,Silver,Plastic,0.6,4.5,Yes
+29,Compression Running Shorts,Sports,SpeedStep,44.99,Black,Spandex,0.3,4.4,Yes
+30,Portable Power Bank,Electronics,ChargeFast,59.99,Blue,Aluminum,0.4,4.5,Yes
+31,Premium Down Comforter,Bedroom,DreamyNights,199.99,White,Goose Down,3.5,4.6,Yes
+32,Digital Drawing Tablet,Electronics,ArtPro,199.99,Black,Plastic,0.8,4.4,Yes
+33,Ergonomic Standing Desk,Furniture,WorkSmart,599.99,White,Wood,85.0,4.7,Yes
+34,Smart Water Bottle,Sports,HydroTech,49.99,Green,Stainless Steel,0.5,4.3,Yes
+35,Ceramic Cookware Set,Kitchen,CookEase,299.99,White,Ceramic,15.0,4.5,Yes
+36,Leather Laptop Bag,Accessories,UrbanTrend,129.99,Brown,Genuine Leather,2.0,4.6,Yes
+37,High-Performance Blender,Kitchen,BlendMaster,199.99,Red,Plastic,8.5,4.7,Yes
+38,Wireless Gaming Headset,Electronics,GamePro,149.99,Black,Aluminum,0.6,4.5,Yes
+39,Luxury Bath Towel Set,Home Decor,SoftTouch,89.99,Gray,Egyptian Cotton,2.5,4.6,Yes
+40,Smart LED Light Bulbs,Home Appliances,LightTech,49.99,White,Plastic,0.3,4.4,Yes
+41,Premium Hiking Boots,Sports,TrailMaster,159.99,Brown,Leather,1.5,4.7,Yes
+42,Electric Toothbrush,Personal Care,DentalPro,89.99,Blue,Plastic,0.4,4.5,Yes
+43,Telescopic Camping Tent,Sports,OutdoorGear,249.99,Green,Nylon,4.5,4.6,Yes
+44,Smart WiFi Router,Electronics,NetworkPro,129.99,Black,Plastic,0.7,4.4,Yes
+45,Silk Bedsheet Set,Bedroom,DreamyNights,199.99,White,Silk,2.0,4.7,Yes
+46,Portable Projector,Electronics,CinemaHome,299.99,Silver,Aluminum,1.2,4.5,Yes
+47,Professional Makeup Brush Set,Personal Care,BeautyPro,79.99,Rose Gold,Synthetic,0.5,4.6,Yes
+48,Multi-Function Instant Pot,Kitchen,CookEase,129.99,Silver,Stainless Steel,6.5,4.8,Yes
+49,Adventure Travel Backpack,Accessories,UrbanTrend,99.99,Black,Polyester,1.8,4.5,Yes
+50,Smart Indoor Garden,Home Appliances,GreenTech,199.99,White,Plastic,5.5,4.4,Yes
+51,Professional Hair Straightener,Personal Care,SalonPro,119.99,Rose Gold,Ceramic,0.5,4.5,Yes
+52,Gaming Mechanical Keyboard,Electronics,GamePro,129.99,Black,Aluminum,1.5,4.6,Yes
+53,Portable Outdoor Grill,Kitchen,BBQMaster,249.99,Silver,Stainless Steel,15.0,4.7,Yes
+54,Smart Window Blinds,Home Appliances,SmartHome,299.99,White,Aluminum,4.5,4.5,Yes
+55,Men's Running Jacket,Sports,SpeedStep,89.99,Blue,Polyester,0.7,4.4,Yes
+56,4K Action Camera,Electronics,AdventureCam,199.99,Black,Aluminum,0.3,4.6,Yes
+57,Modern Floor Lamp,Home Decor,StyleHome,179.99,Black,Metal,8.5,4.5,Yes
+58,Smart Fitness Mirror,Sports,FitTech,1499.99,Silver,Glass,45.0,4.8,Yes
+59,Professional Hair Clippers,Personal Care,GroomPro,79.99,Silver,Stainless Steel,0.5,4.5,Yes
+60,Wireless Noise-Cancelling Headphones,Electronics,SoundWave,299.99,Black,Aluminum,0.4,4.7,Yes
+61,Luxury Velvet Armchair,Furniture,StyleHome,599.99,Blue,Velvet,35.0,4.6,Yes
+62,Smart Garden Irrigation System,Home Appliances,GreenTech,249.99,Green,Plastic,3.5,4.5,Yes
+63,Portable Car Jump Starter,Automotive,PowerPro,99.99,Red,Aluminum,0.8,4.4,Yes
+64,Digital Piano Keyboard,Electronics,MusicPro,499.99,Black,Wood,25.0,4.7,Yes
+65,Luxury Egyptian Cotton Towels,Home Decor,SoftTouch,129.99,White,Egyptian Cotton,2.0,4.6,Yes
+66,Smart Pet Feeder,Home Appliances,PetTech,199.99,White,Plastic,3.5,4.5,Yes
+67,Professional Photo Printer,Electronics,PrintPro,299.99,Silver,Plastic,8.5,4.6,Yes
+68,Men's Leather Dress Shoes,Accessories,ClassicStyle,159.99,Brown,Genuine Leather,1.2,4.5,Yes
+69,Portable Solar Charger,Electronics,EcoPower,79.99,Blue,Aluminum,0.3,4.4,Yes
+70,Programmable Rice Cooker,Kitchen,CookEase,89.99,White,Stainless Steel,5.5,4.5,Yes
+71,High-Performance Running Shoes,Sports,SpeedStep,129.99,Red,Synthetic,0.8,4.6,Yes
+72,Smart Refrigerator,Home Appliances,CoolTech,1999.99,Stainless Steel,Stainless Steel,150.0,4.8,Yes
+73,Professional Beard Trimmer,Personal Care,GroomPro,59.99,Silver,Stainless Steel,0.3,4.4,Yes
+74,Wireless Presentation Clicker,Electronics,WorkPro,49.99,Black,Plastic,0.2,4.3,Yes
+75,Modern Accent Side Table,Furniture,StyleHome,199.99,Brown,Wood,20.0,4.5,Yes
+76,Smart Door Lock,Home Appliances,SafeGuard,249.99,Silver,Aluminum,1.2,4.6,Yes
+77,Waterproof Bluetooth Speaker,Electronics,SoundPulse,99.99,Blue,Silicone,0.5,4.5,Yes
+78,Professional Massage Gun,Sports,RecoveryPro,199.99,Black,Aluminum,1.5,4.7,Yes
+79,Kitchen Food Processor,Kitchen,CulinaryCraft,179.99,Silver,Stainless Steel,8.5,4.6,Yes
+80,Smart WiFi Doorbell,Home Appliances,SafeGuard,199.99,Black,Plastic,0.5,4.5,Yes
+81,Women's Yoga Leggings,Sports,ZenFitness,69.99,Purple,Spandex,0.3,4.5,Yes
+82,Digital Drawing Pad,Electronics,ArtPro,149.99,Black,Plastic,0.6,4.4,Yes
+83,Premium Desk Lamp,Home Decor,LightTech,99.99,Silver,Aluminum,2.5,4.5,Yes
+84,Smart Wireless Earbuds,Electronics,SoundWave,129.99,White,Aluminum,0.2,4.6,Yes
+85,Adjustable Home Office Chair,Furniture,WorkComfort,249.99,Gray,Mesh,18.0,4.7,Yes
+86,Professional Skincare Device,Personal Care,BeautyTech,299.99,Rose Gold,Plastic,0.5,4.6,Yes
+87,Portable Electric Grill,Kitchen,BBQMaster,129.99,Silver,Stainless Steel,8.5,4.5,Yes
+88,Rugged Outdoor Smartwatch,Electronics,AdventureTech,199.99,Green,Silicone,0.3,4.5,Yes
+89,Luxury Throw Blanket,Home Decor,CozyLiving,89.99,Gray,Wool,2.5,4.6,Yes
+90,Smart Power Strip,Home Appliances,EcoPower,59.99,White,Plastic,0.5,4.4,Yes
+91,Professional Mountain Bike,Sports,RidePro,799.99,Blue,Aluminum,15.0,4.8,Yes
+92,Digital Voice Recorder,Electronics,RecordPro,79.99,Black,Plastic,0.3,4.4,Yes
+93,Modern Wall Clock,Home Decor,StyleHome,79.99,Silver,Metal,2.0,4.5,Yes
+94,Smart WiFi Security Camera,Home Appliances,SafeGuard,149.99,Black,Plastic,0.4,4.5,Yes
+95,Men's Performance Compression Shirt,Sports,SpeedStep,49.99,Black,Polyester,0.3,4.4,Yes
+96,Portable Bluetooth Karaoke Microphone,Electronics,MusicPro,79.99,Red,Aluminum,0.5,4.5,Yes
+97,Luxury Bath Robe,Home Decor,SoftTouch,99.99,White,Cotton,1.0,4.6,Yes
+98,Smart Air Fryer,Kitchen,CookEase,179.99,Black,Stainless Steel,10.5,4.7,Yes
+99,Professional Portable Monitor,Electronics,DisplayPro,299.99,Black,Aluminum,2.5,4.6,Yes
+100,High-End Fitness Tracker,Electronics,FitTech,199.99,Blue,Silicone,0.2,4.5,Yes
